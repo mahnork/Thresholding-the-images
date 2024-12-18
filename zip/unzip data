@@ -1,0 +1,23 @@
+import shutil
+import os
+
+#Path to the folder you want to compress
+folder_to_zip = 'trainDataPosTh0'  # Replace with the folder path
+output_zip_file = 'trainDataPosTh0'  # Name for the output zip file (without .zip)
+
+#Compress the folder into a zip file
+shutil.make_archive(output_zip_file, 'zip', folder_to_zip)
+
+print(f"Folder '{folder_to_zip}' has been compressed into '{output_zip_file}.zip'")
+
+
+import zipfile
+
+# Specify the path to the zip file and the directory to extract to
+zip_file = 'trainDataPos.zip'
+extract_dir = 'trainDataPos'
+
+# Open the zip file and extract its contents
+with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+    zip_ref.extractall(extract_dir)
+
